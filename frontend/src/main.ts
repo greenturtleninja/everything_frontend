@@ -11,10 +11,11 @@ app.use(router)
 
 app.mount('#app')
 
-const canvas = document.getElementById("myCanvas");
+const canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
 if (canvas){
     const ctx = canvas.getContext("2d");
-
-    ctx.fillStyle = "green";
-    ctx.fillRect(10, 10, 150, 100);
+    if (ctx) {
+        ctx.fillStyle = "green";
+        ctx.fillRect(10, 10, 150, 100);
+    }
 }
