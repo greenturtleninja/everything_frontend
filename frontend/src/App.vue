@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+import SensorSocket from './SensorSocket.vue';
+
+const childMsg = ref('No child msg yet')
 
 function rectangle() {
   const canvas = <HTMLCanvasElement> document.getElementById("sensor");
@@ -41,6 +45,8 @@ function showCanvas() {
 
 <template>
   <h1>Sensor Output</h1>
+  <SensorSocket @response="(msg) => childMsg = msg"/>
+  {{ childMsg }}
   <button @click="rectangle">Sensor</button>
   <button @click="showCanvas">Test Canvas</button>
   <br />
