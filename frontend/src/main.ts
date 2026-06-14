@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
+import { createApp, ref } from 'vue'
 import { createPinia } from 'pinia'
 
 import App from './App.vue'
@@ -10,12 +10,3 @@ app.use(createPinia())
 app.use(router)
 
 app.mount('#app')
-
-const canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
-if (canvas){
-    const ctx = canvas.getContext("2d");
-    if (ctx) {
-        ctx.fillStyle = "green";
-        ctx.fillRect(10, 10, 150, 100);
-    }
-}
