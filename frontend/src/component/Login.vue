@@ -20,7 +20,7 @@ async function login() {
 
     const token: Response = await fetch(loginUrl, {
         method: 'POST',
-        body: JSON.stringify(loginUser),
+        body: JSON.stringify(loginUser)
     });
 }
 
